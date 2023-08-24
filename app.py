@@ -779,7 +779,7 @@ footer = """
         width: 100%;
         color: #FAFAFA;
         background-color: #222222;
-        text-align: justify;
+        text-align: left;
         padding: 0em;
         padding-left: 1.875em;
         padding-right: 1.875em;
@@ -815,8 +815,8 @@ footer = """
      @media screen and (max-width: 1024px) {
         .footer {
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            justify-content: left;
+            align-items: left;
             padding: 0.8em;  /* Adjust padding for smaller screens */
        }
         .left-column-footer {
