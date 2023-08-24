@@ -795,6 +795,7 @@ footer = """
         width: 17.5%;
         padding: 0.625em;
         text-align: left;
+        vertical-align: middle;
     }
     .middle-column-footer {
         font-size: 0.65em;
