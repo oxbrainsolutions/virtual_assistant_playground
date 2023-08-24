@@ -840,6 +840,9 @@ footer = """
             margin-bottom: 0em;
             text-align: justify;
         }
+        .right-column-footer {
+            width: 0%;
+        }
     }
     </style>
 
