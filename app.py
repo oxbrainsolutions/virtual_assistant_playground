@@ -787,6 +787,7 @@ footer = """
         display: flex;
         justify-content: left;
         align-items: left;
+        vertical-align: middle;
     }
     .left-column-footer {
         float: left;
