@@ -788,10 +788,10 @@ footer = """
         align-items: center;
     }
     .left-column-footer {
-        justify-content: left;
         font-size: 0.65em;
         width: 17.5%;
         padding: 0.625em;
+        text-align: left;
     }
     .middle-column-footer {
         font-size: 0.65em;
