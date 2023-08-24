@@ -788,6 +788,9 @@ footer = """
         align-items: center;
     }
     .left-column-footer {
+        text-align: left;
+        display: flex;
+        align-items: left;
         font-size: 0.65em;
         width: 17.5%;
         padding: 0.625em;
