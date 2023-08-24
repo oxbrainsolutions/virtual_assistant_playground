@@ -825,6 +825,7 @@ footer = """
             font-size: 2.2em;
             padding: 0.625em;
             margin-bottom: 0em;
+            text-align: left;
         }
 
         .middle-column-footer {
