@@ -785,7 +785,7 @@ footer = """
         padding-left: 1.875em;
         padding-right: 1.875em;
         display: flex;
-        justify-content: left;
+        justify-content: flex-start;
         align-items: center;
         vertical-align: middle;
     }
