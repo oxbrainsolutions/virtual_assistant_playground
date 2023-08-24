@@ -819,7 +819,7 @@ footer = """
         .footer {
             flex-direction: column;
             justify-content: left;
-            align-items: left;
+            align-items: flex-start;
             padding: 0.8em;  /* Adjust padding for smaller screens */
        }
         .left-column-footer {
