@@ -822,10 +822,7 @@ footer = """
        }
         .left-column-footer {
             width: 0%;
-            justify-content: center;
-            text-align: left;
-            display: flex;
-            align-items: left;
+            justify-content: left;
             display: flex;
             font-size: 2.2em;
             padding: 0.625em;
