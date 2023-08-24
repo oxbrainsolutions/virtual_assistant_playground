@@ -823,7 +823,7 @@ footer = """
             padding: 0.8em;  /* Adjust padding for smaller screens */
        }
         .left-column-footer {
-            width: 15%;
+            width: 30%;
             justify-content: justify;
             display: flex;
             font-size: 2.2em;
@@ -834,7 +834,7 @@ footer = """
         }
 
         .middle-column-footer {
-            width: 85%;
+            width: 70%;
             font-size: 2.2em;
             padding: 0.625em;
             margin-bottom: 0em;
