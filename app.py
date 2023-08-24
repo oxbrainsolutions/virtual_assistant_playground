@@ -844,6 +844,9 @@ footer = """
 
 <div class="content-container">
     <div class="footer">
+        <div class="left-column-footer">
+            <b>Context &copy; oxbrAIn 2023</b>
+        </div>
         <div class="middle-column-footer">
             <b>DISCLAIMER: The functionalities of the chatbot provided in the playground are facilitated through advanced AI technology developed by OpenAI. This playground may exhibit inherent limitations associated with the accuracy of its responses and is intended for educational purposes only.</b>
         </div>
