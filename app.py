@@ -830,6 +830,7 @@ footer = """
             padding: 0.625em;
             margin-bottom: 0em;
             text-align: left;
+            display: flex;
         }
 
         .middle-column-footer {
