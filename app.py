@@ -784,8 +784,8 @@ footer = """
         padding-left: 1.875em;
         padding-right: 1.875em;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: left;
+        align-items: left;
     }
     .left-column-footer {
         float: left;
