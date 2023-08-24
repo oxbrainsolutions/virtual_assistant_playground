@@ -3,11 +3,10 @@ import openai
 import pathlib
 import base64
 import imutils
-from utils.functions import generate_images, display_images, export_images, generate_similar_prompt
 
 openai.api_key = "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"
 
-st.set_page_config(page_title="Image Generation Playground", page_icon="images/oxbrain_favicon.png", layout="wide")
+st.set_page_config(page_title="Virtual Assistant Playground", page_icon="images/oxbrain_favicon.png", layout="wide")
 
 st.elements.utils._shown_default_value_warning=True
 
@@ -271,33 +270,6 @@ marker_spinner_css = """
     <div class="marker11"></div>
 </div>
 """
-
-spinner_image_css = """
-<style>
-    .image-container {{
-        display: inline-block;
-        width: 25%;
-        text-align: center;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 9999;
-    }}
-
-    @media (max-width: 1024px) {{
-        .image-container {{
-            width: 50%;
-        }}
-    }}
-</style>
-<div class="image-container">
-    <img src="data:image/png;base64,{}" class="img-fluid" alt="logo" width="30%">
-</div>
-"""
-
-
-
 
 subheader_media_query = '''
 <style>
@@ -678,51 +650,6 @@ line_media_query2 = '''
     </style>
 '''
 
-def change_callback1():
-    st.session_state.submit_confirm1 = False
-    st.session_state.generate_confirm1 = False
-    error_field1.empty()
-    error_field2.empty()
-    if "user_generated_images" in st.session_state:
-        del st.session_state.user_generated_images
-    if "byte_arrays" in st.session_state:
-        del st.session_state.byte_arrays
-
-def reset1():
-    if "user_image_description" in st.session_state:
-        del st.session_state.user_image_description
-    if "user_generated_images" in st.session_state:
-        del st.session_state.user_generated_images
-    if "byte_arrays" in st.session_state:
-        del st.session_state.byte_arrays
-    variation_options = [1, 2, 3, 4]
-    st.session_state.user_n_variations = variation_options[0]
-    category_options = ["",
-    "Abstract",
-    "Ancient",
-    "Animals",
-    "Cyberpunk",
-    "Fantasy",
-    "Food & Drink",
-    "Friendly",
-    "Futuristic",
-    "Haunted",
-    "Majestic",
-    "Nature",
-    "Objects",
-    "People",
-    "Random",
-    "Sci-Fi",
-    "Steampunk",
-    "Surreal",
-    "Urban"
-    ]
-    st.session_state.user_category = category_options[0]
-    reset_button_field.empty()
-    st.session_state.submit_confirm1 = False
-    st.session_state.generate_confirm1 = False
-    error_field1.empty()
-    error_field2.empty()
 
 def img_to_bytes(img_path):
     img_bytes = pathlib.Path(img_path).read_bytes()
@@ -818,79 +745,6 @@ st.markdown(header.format(encoded_string, img_to_bytes("images/oxbrain_logo_tran
 
 spinner = st.empty()
 
-with st.sidebar:
-    subheader_text1 = '''<p class="subheader_text" style="margin-top: 0em; margin-bottom: 0em; text-align: justify;"><span style="color: #FAFAFA; font-family: sans-serif; font-size: 1em; ">Generate an Image</span></p>'''
-    st.markdown(subheader_media_query + subheader_text1, unsafe_allow_html=True)
-    st.markdown(line_media_query1 + line1, unsafe_allow_html=True)
-
-    dataset_container = st.sidebar.expander("", expanded = True)
-    with dataset_container:
-      text = '<p class="text" style="margin-top: 0em; margin-bottom: 0em;"><span style="font-family:sans-serif; color:#FAFAFA; font-size: 0.8em; ">Image Description</span></p>'
-      st.markdown(text_media_query1 + text, unsafe_allow_html=True)
-      if "user_image_description" not in st.session_state and st.session_state.generate_confirm1 == False:
-          st.text_area(label="", label_visibility="collapsed", placeholder="Enter Description", key="user_image_description", on_change=change_callback1)
-      else:
-          st.text_area(label="", label_visibility="collapsed", value=st.session_state.user_image_description, key="user_image_description", on_change=change_callback1)
-          st.session_state.generate_confirm1 = False
-    
-      text = '<p class="text" style="margin-top: 0em; margin-bottom: 0em;"><span style="font-family:sans-serif; color:#FAFAFA; font-size: 0.8em; ">Number of Images</span></p>'
-      st.markdown(text_media_query1 + text, unsafe_allow_html=True)
-      variation_options = [1, 2, 3, 4]
-      st.selectbox(label="", label_visibility="collapsed", options=variation_options,
-                   format_func=lambda x: "Select Variations" if x == "" else x, key="user_n_variations", on_change=change_callback1)
-    
-      submit_button1 = st.button("Generate Images", key="key3")
-      reset_button_field = st.empty()
-      create_prompt_text_field = st.empty()
-      text = '<p class="text" style="margin-top: 1em; margin-bottom: 1em; text-align: justify;"><span style="font-family:sans-serif; color:#FAFAFA; font-size: 0.8em; ">Need inspiration? Select a category below to harness the power of AI and unlock a wealth of ideas to ignite your creativity!</span></p>'
-      create_prompt_text_field.markdown(text_media_query1 + text, unsafe_allow_html=True)
-    
-      category_options = ["",
-        "Abstract",
-        "Ancient",
-        "Animals",
-        "Cyberpunk",
-        "Fantasy",
-        "Food & Drink",
-        "Friendly",
-        "Futuristic",
-        "Haunted",
-        "Majestic",
-        "Nature",
-        "Objects",
-        "People",
-        "Random",
-        "Sci-Fi",
-        "Steampunk",
-        "Surreal",
-        "Urban"
-      ]
-      categories_field = st.empty()
-      categories_field.selectbox(label="", label_visibility="collapsed", options=category_options,
-                   format_func=lambda x: "Select Category" if x == "" else x, key="user_category", on_change=change_callback1)
-    
-        
-      create_prompt_button_field = st.empty()
-      download_text_field = st.empty()
-      generate_idea_button = create_prompt_button_field.button("Generate Idea", key="key4")
-      error_field1 = st.empty()
-      if generate_idea_button:
-          if st.session_state.user_category == "":
-            st.session_state.generate_confirm1 = False
-            error_field1.error("Error: Please select category.")
-          else:
-              st.session_state.generate_confirm1 = True
-              if "user_image_description" in st.session_state:
-                  del st.session_state.user_image_description
-                  
-      if st.session_state.generate_confirm1 == True:
-        if "user_image_description" in st.session_state:
-            del st.session_state.user_image_description
-        spinner.markdown(marker_spinner_css, unsafe_allow_html=True)
-        st.session_state.user_image_description = generate_similar_prompt(st.session_state.user_category)
-        spinner.empty()
-        st.session_state.generate_confirm1 = False
-        st.experimental_rerun()
 
 col1, col2, col3 = st.columns([1, 4, 1])
 with col2:
@@ -914,58 +768,6 @@ with col2:
   subheader_text_field2 = st.empty()
   subheader_text_field2.markdown(information_media_query + information_text1, unsafe_allow_html=True)
 
-with st.sidebar:
-    with dataset_container:
-        error_field2 = st.empty()
-        if submit_button1:
-            if "user_image_description" not in st.session_state or st.session_state.user_n_variations == "":
-                st.session_state.submit_confirm1 = False
-                st.session_state.generate_confirm1 = False
-                error_field2.error("Error: Please complete input details.")
-            else:
-              st.session_state.submit_confirm1 = True
-              st.session_state.generate_confirm1 = False
-              if "user_generated_images" in st.session_state:
-                  del st.session_state.user_generated_images
-              if "byte_arrays" in st.session_state:
-                  del st.session_state.byte_arrays
-        
-        if st.session_state.submit_confirm1 == True:
-            if st.session_state.process_count >= 10:
-                error_field2.error("Error: Maximum process limit reached. You may only run a maximum of 10 iterations.")
-                st.session_state.submit_confirm1 = False
-            else:
-                if st.session_state.error_indicator == False:
-                    spinner.markdown(marker_spinner_css, unsafe_allow_html=True)
-                    st.session_state.user_generated_images, st.session_state.byte_arrays = generate_images(st.session_state.user_image_description, st.session_state.user_n_variations)
-                    st.session_state.submit_confirm1 = False
-                else:
-                    st.session_state.submit_confirm1 = False
-        st.write("")
-        st.write("")
-                    
-if "user_generated_images" in st.session_state and st.session_state.user_generated_images is not None:
-    if len(st.session_state.user_generated_images) != 0 and st.session_state.error_indicator == False:
-        st.session_state.submit_confirm1 = False
-        display_images(st.session_state.user_generated_images)
-        st.session_state.process_count += 1
-        spinner.empty()
-        create_prompt_text_field.empty()
-        categories_field.empty()
-        create_prompt_button_field.empty()
-        create_prompt_button_field.button("Reset", key="key5", on_click=reset1)
-        text = '<p class="text" style="margin-top: 1em; margin-bottom: 0em; text-align: justify;"><span style="font-family:sans-serif; color:#FAFAFA; font-size: 0.8em; ">Impressed with your AI-generated images? Click below to download your creations and share them with the world!</span></p>'
-        download_text_field.markdown(text_media_query1 + text, unsafe_allow_html=True)
-        with dataset_container:
-            export_images(st.session_state.byte_arrays)
-    else:
-        spinner.empty()
-        st.session_state.error_indicator = False
-        st.session_state.submit_confirm1 = False
-else:
-    spinner.empty()
-    st.session_state.error_indicator = False
-    st.session_state.submit_confirm1 = False
 
 footer = """
 <style>
