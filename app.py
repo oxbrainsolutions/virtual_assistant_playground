@@ -749,7 +749,7 @@ spinner = st.empty()
 col1, col2, col3 = st.columns([1, 4, 1])
 with col2:
   header_text = '''
-    <p class="header_text" style="margin-top: 3.6em; margin-bottom: 0em; text-align: center;"><span style="color: #FAFAFA; font-family: sans-serif; font-size: 1.8em; ">Image Synthesis & Generation</span></p>
+    <p class="header_text" style="margin-top: 3.6em; margin-bottom: 0em; text-align: center;"><span style="color: #FAFAFA; font-family: sans-serif; font-size: 1.8em; ">Virtual Conversational Assistant</span></p>
   '''
 
   header_media_query = '''
@@ -845,7 +845,7 @@ footer = """
 <div class="content-container">
     <div class="footer">
         <div class="middle-column-footer">
-            <b>DISCLAIMER: The image synthesis and generation capabilities provided in the playground are facilitated through advanced machine learning technology developed by OpenAI. This playground may exhibit inherent limitations associated with the accuracy of generated images and is intended for educational purposes only.</b>
+            <b>DISCLAIMER: The functionalities of the chatbot provided in the playground are facilitated through advanced AI technology developed by OpenAI. This playground may exhibit inherent limitations associated with the accuracy of its responses and is intended for educational purposes only.</b>
         </div>
         <div class="clear"></div>
     </div>
