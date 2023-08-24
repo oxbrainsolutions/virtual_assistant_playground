@@ -786,7 +786,7 @@ footer = """
         padding-right: 1.875em;
         display: flex;
         justify-content: left;
-        align-items: left;
+        align-items: center;
         vertical-align: middle;
     }
     .left-column-footer {
