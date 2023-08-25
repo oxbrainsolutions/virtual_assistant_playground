@@ -576,7 +576,7 @@ st.markdown("""
   }
   div.stChatInputContainer {
   width: 65%;
-  max-width: 600px;
+  max-width: 400px;
   }
   div.stChatMessage {
   background-color: #4F5254;
@@ -758,7 +758,7 @@ st.markdown(header.format(encoded_string, img_to_bytes("images/oxbrain_logo_tran
             unsafe_allow_html=True)
 
 spinner = st.empty()
-
+st.write("Hello1")
 
 col1, col2, col3 = st.columns([1, 4, 1])
 with col2:
