@@ -571,7 +571,6 @@ st.markdown("""
   background-color: #4F5254;
   border: 0.25em solid #002147;
   font-family: sans-serif;
-  height: 5em;
   }
   div[data-baseweb="textarea"] > div:hover,
   input[type=text]:hover {
@@ -764,7 +763,7 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
-if prompt := st.chat_input("What is up?"):
+if prompt := st.chat_input(""):
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
