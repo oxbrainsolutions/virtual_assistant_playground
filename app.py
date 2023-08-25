@@ -567,7 +567,7 @@ st.markdown("""
   }
   div.stChatFloatingInputContainer {
   background-color: rgba(0, 0, 0, 0);
-  margin-bottom: 5em;
+  margin-bottom: 2em;
   }
   div.stChatMessage {
   background-color: #4F5254;
@@ -598,6 +598,10 @@ st.markdown("""
     span.st-bj.st-cf.st-ce.st-f3.st-f4.st-af {
     font-size: 0.8em;
     }
+  div.stChatFloatingInputContainer {
+  background-color: rgba(0, 0, 0, 0);
+  margin-bottom: 7em;
+  }
   }
   
   /* Media query for small screens */
