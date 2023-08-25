@@ -502,6 +502,9 @@ st.markdown("""
     .css-1s3wgy2 {
         z-index: 1000 !important;
     }
+    .css-a2dvil {
+        color: #FCBC24 !important;
+    }
             div.css-1inwz65.ew7r33m0 {
             font-size: 0.8em !important;
             font-family: sans-serif !important;
@@ -807,7 +810,7 @@ if prompt := st.chat_input(""):
         message_placeholder.markdown(full_response)
     st.session_state.messages.append({"role": "assistant", "content": full_response})
 
-st.write("hello2")
+st.write("hello1")
 
 footer = """
 <style>
