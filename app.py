@@ -791,7 +791,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 if prompt := st.chat_input(""):
-    st.session_state.messages.append({"role": "user", "content": prompt})
+    st.session_state.messages.append({"role": "user", "content": prompt, "avatar": "images/oxbrain_user_icon.png"})
     with st.chat_message("user", avatar="images/oxbrain_user_icon.png"):
         st.markdown(prompt)
 
@@ -809,9 +809,9 @@ if prompt := st.chat_input(""):
             full_response += response.choices[0].delta.get("content", "")
             message_placeholder.markdown(full_response + "▌")
         message_placeholder.markdown(full_response)
-    st.session_state.messages.append({"role": "assistant", "content": full_response})
+    st.session_state.messages.append({"role": "assistant", "content": full_response, "avatar": "images/oxbrain_assistant_icon.png"})
 
-st.write("hello21")
+st.write("hello3")
 
 footer = """
 <style>
