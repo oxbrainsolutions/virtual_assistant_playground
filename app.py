@@ -786,7 +786,7 @@ if prompt := st.chat_input("What is up?"):
     st.session_state.messages.append({"role": "assistant", "content": full_response})
 
 
-
+st.write("hello")
 
 
 footer = """
