@@ -577,9 +577,8 @@ st.markdown("""
   border: 0.25em solid #002147;
   font-family: sans-serif;
   width: 60%;
-  display: flex;
-  align-items: center;
-  vertical-align: middle;
+  position: relative;
+  left:50%;
   }
   div[data-baseweb="textarea"] > div,
   input[type=text] {
@@ -803,7 +802,7 @@ if prompt := st.chat_input(""):
         message_placeholder.markdown(full_response)
     st.session_state.messages.append({"role": "assistant", "content": full_response})
 
-st.write("hello2")
+st.write("hello1")
 
 footer = """
 <style>
