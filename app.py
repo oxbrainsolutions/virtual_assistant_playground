@@ -567,6 +567,7 @@ st.markdown("""
   }
   div.stChatInputContainer {
   width: 30%;
+  background-color: #FAFAFA;
   }
   div[data-baseweb="textarea"] > div,
   input[type=text] {
