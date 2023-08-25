@@ -787,7 +787,7 @@ if "messages" not in st.session_state:
     st.session_state.messages = []
 
 for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
+    with st.chat_message(message["role"], avatar=message["avatar"]):
         st.markdown(message["content"])
 
 if prompt := st.chat_input(""):
@@ -811,7 +811,7 @@ if prompt := st.chat_input(""):
         message_placeholder.markdown(full_response)
     st.session_state.messages.append({"role": "assistant", "content": full_response, "avatar": "images/oxbrain_assistant_icon.png"})
 
-st.write("hello3")
+st.write("hello4")
 
 footer = """
 <style>
