@@ -770,7 +770,7 @@ if prompt := st.chat_input(""):
     with st.chat_message("user"):
         st.markdown(prompt)
 
-    with st.chat_message("assistant"):
+    with st.chat_message("assistant", avatar="images/oxbrain_favicon.png"):
         message_placeholder = st.empty()
         full_response = ""
         for response in openai.ChatCompletion.create(
