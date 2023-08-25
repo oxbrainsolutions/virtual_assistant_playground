@@ -571,7 +571,7 @@ st.markdown("""
   background-color: #4F5254;
   border: 0.25em solid #002147;
   font-family: sans-serif;
-  height: 3em;
+  height: 2em;
   }
   div[data-baseweb="textarea"] > div:hover,
   input[type=text]:hover {
