@@ -578,7 +578,7 @@ st.markdown("""
   font-family: sans-serif;
   width: 60%;
   position: relative;
-  left:50%;
+  left: 20%;
   }
   div[data-baseweb="textarea"] > div,
   input[type=text] {
