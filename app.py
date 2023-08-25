@@ -565,7 +565,8 @@ st.markdown("""
   font-family: sans-serif;
   height: 3em;
   }
-  div[data-baseweb="textarea"] > div {
+  div.stChatInputContainer {
+  justify-content: center !important;
   width: 65%;
   }
   div[data-baseweb="textarea"] > div,
