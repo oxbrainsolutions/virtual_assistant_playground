@@ -785,10 +785,6 @@ if prompt := st.chat_input("What is up?"):
         message_placeholder.markdown(full_response)
     st.session_state.messages.append({"role": "assistant", "content": full_response})
 
-
-st.write("hello")
-
-
 footer = """
 <style>
     .footer {
