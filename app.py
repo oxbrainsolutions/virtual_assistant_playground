@@ -311,20 +311,6 @@ error_media_query1 = '''
 </style>
 '''
 
-if "process_count" not in st.session_state:
-    st.session_state["process_count"] = 0
-
-if "user_generated_images" not in st.session_state or "byte_arrays" not in st.session_state:
-    st.session_state["user_generated_images"] = []
-    st.session_state["byte_arrays"] = []
-
-if "error_indicator" not in st.session_state:
-    st.session_state["error_indicator"] = False
-
-if "submit_confirm1" not in st.session_state or "generate_confirm1" not in st.session_state:
-    st.session_state["submit_confirm1"] = False
-    st.session_state["generate_confirm1"] = False
-
 
 styles2 = """
 <style>
@@ -849,7 +835,7 @@ footer = """
 <div class="content-container">
     <div class="footer">
         <div class="left-column-footer">
-            <b><span style="color: #FAFAFA;">Context &copy; oxbr</span><span style="color:Teal;">AI</span><span style="color: #FAFAFA;">n 2023</span></b>
+            <b><span style="color: #FAFAFA;">Context &copy; oxbr</span><span style="color: #FCBC24;">AI</span><span style="color: #FAFAFA;">n 2023</span></b>
         </div>
         <div class="middle-column-footer">
             <b>DISCLAIMER: The functionalities of the chatbot provided in the playground are facilitated through advanced AI technology developed by OpenAI. This playground may exhibit inherent limitations associated with the accuracy of its responses and is intended for educational purposes only.</b>
