@@ -4,7 +4,7 @@ import pathlib
 import base64
 import imutils
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 st.set_page_config(page_title="Virtual Assistant Playground", page_icon="images/oxbrain_favicon.png", layout="wide")
 
