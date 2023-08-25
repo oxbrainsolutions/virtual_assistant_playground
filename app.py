@@ -571,8 +571,6 @@ st.markdown("""
   }
   div.stChatInputContainer {
   width: 65%;
-  position: relative;
-  left: 17.5%;
   }
   div.stChatMessage {
   background-color: #4F5254;
@@ -809,7 +807,7 @@ if prompt := st.chat_input(""):
         message_placeholder.markdown(full_response)
     st.session_state.messages.append({"role": "assistant", "content": full_response})
 
-st.write("hello1")
+st.write("hello2")
 
 footer = """
 <style>
