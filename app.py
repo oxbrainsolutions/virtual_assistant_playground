@@ -758,7 +758,6 @@ st.markdown(header.format(encoded_string, img_to_bytes("images/oxbrain_logo_tran
             unsafe_allow_html=True)
 
 spinner = st.empty()
-st.write("Hello1")
 
 col1, col2, col3 = st.columns([1, 4, 1])
 with col2:
@@ -812,7 +811,7 @@ if prompt := st.chat_input(""):
             message_placeholder.markdown(full_response + "▌")
         message_placeholder.markdown(full_response)
     st.session_state.messages.append({"role": "assistant", "content": full_response, "avatar": "images/oxbrain_assistant_icon.png"})
-
+st.write("Hello1")
 footer = """
 <style>
     .footer {
