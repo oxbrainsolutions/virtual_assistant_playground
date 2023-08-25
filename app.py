@@ -767,6 +767,7 @@ with col2:
       <style>
       @media (max-width: 1024px) {
           p.header_text {
+          margin-top: 0em;
             font-size: 3.2em;
           }
       }
