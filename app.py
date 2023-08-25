@@ -767,7 +767,7 @@ for message in st.session_state.messages:
 
 if prompt := st.chat_input(""):
     st.session_state.messages.append({"role": "user", "content": prompt})
-    with st.chat_message("user"):
+    with st.chat_message("user", avatar="images/oxbrain_user_icon.png"):
         st.markdown(prompt)
 
     with st.chat_message("assistant", avatar="images/oxbrain_assistant_icon.png"):
