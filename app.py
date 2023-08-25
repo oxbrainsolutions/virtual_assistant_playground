@@ -849,7 +849,7 @@ footer = """
 <div class="content-container">
     <div class="footer">
         <div class="left-column-footer">
-            <b>Context &copy; oxbrA<span style="color: yellow;">I</span>n 2023</b>
+            <b><span style="font-family:sans-serif; font-size: 16px;">Welcome to Model</span><span style="font-family:sans-serif; color:Teal; font-size: 16px;">Master</span><span style="font-family:sans-serif; font-size: 16px;">, the versatile and transparent machine learning modeling solution built by financial industry professionals for financial industry professionals</span></b>
         </div>
         <div class="middle-column-footer">
             <b>DISCLAIMER: The functionalities of the chatbot provided in the playground are facilitated through advanced AI technology developed by OpenAI. This playground may exhibit inherent limitations associated with the accuracy of its responses and is intended for educational purposes only.</b>
