@@ -568,13 +568,15 @@ st.markdown("""
   div.stChatFloatingInputContainer {
   background-color: rgba(0, 0, 0, 0);
   margin-bottom: 2em;
-  padding-left: 20em;
-  padding-right: 20em;
+  }
+  div.stChatInputContainer {
+  width: 60%;
   }
   div.stChatMessage {
   background-color: #4F5254;
   border: 0.25em solid #002147;
   font-family: sans-serif;
+  width: 60%;
   }
   div[data-baseweb="textarea"] > div,
   input[type=text] {
@@ -762,7 +764,7 @@ with col2:
   '''
   st.markdown(header_media_query + header_text, unsafe_allow_html=True)
   information_text1 = '''
-    <p class="information_text" style="margin-top: 2em; margin-bottom: 2em; text-align: justify;"><span style="color: #FAFAFA; font-family: sans-serif; font-size: 1em; ">In this interactive playground, you can explore the capabilities of conversational AI technology using advanced natural language processing algorithms. To begin, simply engage the virtual assistant by asking a question and the AI model will provide you with an insightful response. If you need inspiration, the playground can also provide example questions to kickstart your interactions. Please note that this playground is designed to process a maximum of 10 interactions.</span></p>
+    <p class="information_text" style="margin-top: 2em; margin-bottom: 2em; text-align: justify;"><span style="color: #FAFAFA; font-family: sans-serif; font-size: 1em; ">In this interactive playground, you can explore the capabilities of conversational AI technology using advanced natural language processing algorithms. To begin, simply engage the virtual assistant by asking a question and the AI model will provide you with an insightful response. Please note that this playground is designed to process a maximum of 10 interactions.</span></p>
   '''
   subheader_text_field2 = st.empty()
   subheader_text_field2.markdown(information_media_query + information_text1, unsafe_allow_html=True)
@@ -798,7 +800,7 @@ if prompt := st.chat_input(""):
         message_placeholder.markdown(full_response)
     st.session_state.messages.append({"role": "assistant", "content": full_response})
 
-st.write("hello2")
+st.write("hello1")
 
 footer = """
 <style>
