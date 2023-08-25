@@ -569,7 +569,7 @@ st.markdown("""
   background-color: rgba(0, 0, 0, 0);
   }
   div.stChatMessage {
-  background-color: #008080;
+  background-color: #4F5254;
   }
   div[data-baseweb="textarea"] > div,
   input[type=text] {
