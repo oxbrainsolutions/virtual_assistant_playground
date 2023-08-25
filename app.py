@@ -576,7 +576,9 @@ st.markdown("""
   }
   div.stChatInputContainer {
   width: 65%;
-  max-width: 400px;
+  max-width: 200px;
+  position: relative;
+  left: 17.5%;
   }
   div.stChatMessage {
   background-color: #4F5254;
@@ -811,7 +813,7 @@ if prompt := st.chat_input(""):
             message_placeholder.markdown(full_response + "▌")
         message_placeholder.markdown(full_response)
     st.session_state.messages.append({"role": "assistant", "content": full_response, "avatar": "images/oxbrain_assistant_icon.png"})
-st.write("Hello1")
+st.write("Hello2")
 footer = """
 <style>
     .footer {
