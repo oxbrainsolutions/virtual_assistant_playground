@@ -749,7 +749,7 @@ with col2:
   '''
   st.markdown(header_media_query + header_text, unsafe_allow_html=True)
   information_text1 = '''
-    <p class="information_text" style="margin-top: 2em; margin-bottom: 0em; text-align: justify;"><span style="color: #FAFAFA; font-family: sans-serif; font-size: 1em; ">In this interactive playground, you can explore the capabilities of conversational AI technology using advanced natural language processing algorithms. To begin, simply engage the virtual assistant by asking a question, and the AI model will provide you with an insightful response. If you need inspiration, the playground can also provide example questions to kickstart your interactions. Please note that this playground is designed to process a maximum of 10 interactions.</span></p>
+    <p class="information_text" style="margin-top: 2em; margin-bottom: 0em; text-align: justify;"><span style="color: #FAFAFA; font-family: sans-serif; font-size: 1em; ">In this interactive playground, you can explore the capabilities of conversational AI technology using advanced natural language processing algorithms. To begin, simply engage the virtual assistant by asking a question and the AI model will provide you with an insightful response. If you need inspiration, the playground can also provide example questions to kickstart your interactions. Please note that this playground is designed to process a maximum of 10 interactions.</span></p>
   '''
   subheader_text_field2 = st.empty()
   subheader_text_field2.markdown(information_media_query + information_text1, unsafe_allow_html=True)
