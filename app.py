@@ -567,6 +567,7 @@ st.markdown("""
   }
   div.stChatFloatingInputContainer {
   background-color: rgba(0, 0, 0, 0);
+  margin-bottom: 5em;
   }
   div.stChatMessage {
   background-color: #4F5254;
