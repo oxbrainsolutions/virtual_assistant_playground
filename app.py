@@ -810,8 +810,6 @@ if prompt := st.chat_input(""):
         message_placeholder.markdown(full_response)
     st.session_state.messages.append({"role": "assistant", "content": full_response, "avatar": "images/oxbrain_assistant_icon.png"})
 
-st.write("hello4")
-
 footer = """
 <style>
     .footer {
