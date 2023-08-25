@@ -575,8 +575,8 @@ st.markdown("""
   justify-content: center;
   }
   div.stChatInputContainer {
-  width: 65%;
-  max-width: 200px;
+  width: 35%;
+  max-width: 100px;
   position: relative;
   left: 17.5%;
   }
@@ -793,27 +793,32 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"], avatar=message["avatar"]):
         st.markdown(message["content"])
 
-if prompt := st.chat_input(""):
-    st.session_state.messages.append({"role": "user", "content": prompt, "avatar": "images/oxbrain_user_icon.png"})
-    with st.chat_message("user", avatar="images/oxbrain_user_icon.png"):
-        st.markdown(prompt)
+interaction_limit = 10
 
-    with st.chat_message("assistant", avatar="images/oxbrain_assistant_icon.png"):
-        message_placeholder = st.empty()
-        full_response = ""
-        for response in openai.ChatCompletion.create(
-            model=st.session_state["openai_model"],
-            messages=[
-                {"role": m["role"], "content": m["content"]}
-                for m in st.session_state.messages
-            ],
-            stream=True,
-        ):
-            full_response += response.choices[0].delta.get("content", "")
-            message_placeholder.markdown(full_response + "▌")
-        message_placeholder.markdown(full_response)
-    st.session_state.messages.append({"role": "assistant", "content": full_response, "avatar": "images/oxbrain_assistant_icon.png"})
-st.write("Hello2")
+if len(st.session_state.messages) < interaction_limit:
+    if prompt := st.chat_input(""):
+        st.session_state.messages.append({"role": "user", "content": prompt, "avatar": "images/oxbrain_user_icon.png"})
+        with st.chat_message("user", avatar="images/oxbrain_user_icon.png"):
+            st.markdown(prompt)
+    
+        with st.chat_message("assistant", avatar="images/oxbrain_assistant_icon.png"):
+            message_placeholder = st.empty()
+            full_response = ""
+            for response in openai.ChatCompletion.create(
+                model=st.session_state["openai_model"],
+                messages=[
+                    {"role": m["role"], "content": m["content"]}
+                    for m in st.session_state.messages
+                ],
+                stream=True,
+            ):
+                full_response += response.choices[0].delta.get("content", "")
+                message_placeholder.markdown(full_response + "▌")
+            message_placeholder.markdown(full_response)
+        st.session_state.messages.append({"role": "assistant", "content": full_response, "avatar": "images/oxbrain_assistant_icon.png"})
+else:
+    st.warning("Warning: Maximum process limit reached. You may only run a maximum of {interaction_limit} interactions.")
+st.write("Hello1")
 footer = """
 <style>
     .footer {
