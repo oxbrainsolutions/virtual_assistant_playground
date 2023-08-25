@@ -566,8 +566,7 @@ st.markdown("""
   height: 3em;
   }
   div.stChatFloatingInputContainer {
-  background-color: #FAFAFA;
-  width: 30%;
+  background-color: rgba(0, 0, 0, 0);
   }
   div[data-baseweb="textarea"] > div,
   input[type=text] {
@@ -604,7 +603,6 @@ st.markdown("""
   }
   div[data-baseweb="textarea"] > div,
   input[type=text]{
-    height: 12em;
   }
   .stMultiSelect [data-baseweb="select"] > div,
   .stMultiSelect [data-baseweb="tag"] {
