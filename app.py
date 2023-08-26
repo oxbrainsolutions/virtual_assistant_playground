@@ -571,7 +571,6 @@ st.markdown("""
   div.stChatFloatingInputContainer {
   background-color: rgba(0, 0, 0, 0);
   margin-bottom: 2em;
-  display: flex;
   justify-content: center;
   }
   div.stChatInputContainer {
@@ -816,7 +815,7 @@ else:
     col1, col2, col3 = st.columns([1, 4, 1])
     with col2:
         st.warning(f"Warning: Maximum process limit reached. You may only run a maximum of {interaction_limit} interactions.")
-
+st.write("hello")
 footer = """
 <style>
     .footer {
