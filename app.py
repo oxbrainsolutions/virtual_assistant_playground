@@ -508,10 +508,7 @@ st.markdown("""
     .css-f4ro0r {
         align-items: center !important;
     }
-    .css-s1k4sy {
-        width: 67% !important;
-    }
-            div.css-1inwz65.ew7r33m0 {
+        div.css-1inwz65.ew7r33m0 {
             font-size: 0.8em !important;
             font-family: sans-serif !important;
         }
@@ -821,7 +818,7 @@ else:
     col1, col2, col3 = st.columns([1, 4, 1])
     with col2:
         st.warning(f"Warning: Maximum process limit reached. You may only run a maximum of {interaction_limit} interactions.")
-st.write("hello2")
+
 footer = """
 <style>
     .footer {
