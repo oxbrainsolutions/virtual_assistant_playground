@@ -575,9 +575,11 @@ st.markdown("""
   background-color: rgba(0, 0, 0, 0);
   margin-bottom: 2em;
   justify-content: center;
-  width: 60%;
-  margin-left: 20%;
-  margin-right: 20%;
+  width: 60%; /* Set the width to 60% of the container */
+  margin-left: 20%; /* Start at 20% across the page */
+  position: fixed; /* Fix the position */
+  bottom: 0; /* Position at the bottom of the page */
+  left: 20%; /* Start at 20% from the left */
   }
   div.stChatInputContainer {
   }
@@ -821,7 +823,7 @@ else:
     col1, col2, col3 = st.columns([1, 4, 1])
     with col2:
         st.warning(f"Warning: Maximum process limit reached. You may only run a maximum of {interaction_limit} interactions.")
-st.write("hello3")
+st.write("hell01")
 footer = """
 <style>
     .footer {
