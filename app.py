@@ -504,6 +504,7 @@ st.markdown("""
     }
     .css-a2dvil {
         color: #FCBC24 !important;
+        align-items: center !important;
     }
             div.css-1inwz65.ew7r33m0 {
             font-size: 0.8em !important;
@@ -815,7 +816,7 @@ else:
     col1, col2, col3 = st.columns([1, 4, 1])
     with col2:
         st.warning(f"Warning: Maximum process limit reached. You may only run a maximum of {interaction_limit} interactions.")
-st.write("hello")
+st.write("hello1")
 footer = """
 <style>
     .footer {
