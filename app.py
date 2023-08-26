@@ -794,7 +794,7 @@ for message in st.session_state.messages:
 interaction_limit = 10
 
 if len(st.session_state.messages) < 2 * interaction_limit:
-    if prompt := st.chat_input(""):
+    if prompt := st.chat_input("Ask a question"):
         st.session_state.messages.append({"role": "user", "content": prompt, "avatar": "images/oxbrain_user_icon.png"})
         with st.chat_message("user", avatar="images/oxbrain_user_icon.png"):
             st.markdown(prompt)
