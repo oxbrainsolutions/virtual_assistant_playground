@@ -582,7 +582,7 @@ st.markdown("""
   font-family: sans-serif;
   width: 67%;
   position: relative;
-  left: 17%;
+  left: 16.5%;
   }
   div[data-baseweb="textarea"] > div,
   input[type=text] {
