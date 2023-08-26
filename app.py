@@ -795,7 +795,7 @@ for message in st.session_state.messages:
 
 interaction_limit = 10
 
-if len(st.session_state.messages) < interaction_limit:
+if len(st.session_state.messages) < 2 * interaction_limit:
     if prompt := st.chat_input(""):
         st.session_state.messages.append({"role": "user", "content": prompt, "avatar": "images/oxbrain_user_icon.png"})
         with st.chat_message("user", avatar="images/oxbrain_user_icon.png"):
@@ -817,8 +817,9 @@ if len(st.session_state.messages) < interaction_limit:
             message_placeholder.markdown(full_response)
         st.session_state.messages.append({"role": "assistant", "content": full_response, "avatar": "images/oxbrain_assistant_icon.png"})
 else:
-    st.warning("Warning: Maximum process limit reached. You may only run a maximum of {interaction_limit} interactions.")
-st.write("Hello2")
+    with col2:
+        st.warning(f"Warning: Maximum process limit reached. You may only run a maximum of {interaction_limit} interactions.")
+st.write("Hello3")
 footer = """
 <style>
     .footer {
