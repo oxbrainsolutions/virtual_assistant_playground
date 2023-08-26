@@ -575,16 +575,12 @@ st.markdown("""
   justify-content: center;
   }
   div.stChatInputContainer {
-  width: 35%;
-  max-width: 100px;
-  position: relative;
-  left: 17.5%;
   }
   div.stChatMessage {
   background-color: #4F5254;
   border: 0.25em solid #002147;
   font-family: sans-serif;
-  width: 65%;
+  width: 68%;
   position: relative;
   left: 17.5%;
   }
@@ -793,7 +789,7 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"], avatar=message["avatar"]):
         st.markdown(message["content"])
 
-interaction_limit = 1
+interaction_limit = 10
 
 if len(st.session_state.messages) < 2 * interaction_limit:
     if prompt := st.chat_input(""):
@@ -820,7 +816,7 @@ else:
     col1, col2, col3 = st.columns([1, 4, 1])
     with col2:
         st.warning(f"Warning: Maximum process limit reached. You may only run a maximum of {interaction_limit} interactions.")
-st.write("Hello4")
+
 footer = """
 <style>
     .footer {
