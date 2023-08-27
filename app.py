@@ -582,9 +582,7 @@ st.markdown("""
   background-color: #4F5254;
   border: 0.25em solid #002147;
   font-family: sans-serif;
-  width: 67%;
   position: relative;
-  left: 16.5%;
   }
   div[data-baseweb="textarea"] > div,
   input[type=text] {
