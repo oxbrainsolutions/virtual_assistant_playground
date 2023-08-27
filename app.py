@@ -572,6 +572,8 @@ st.markdown("""
   height: 3em;
   }
   div.stChatFloatingInputContainer {
+  position: absolute;
+  left: 16.5%;
   background-color: rgba(0, 0, 0, 0);
   margin-bottom: 2em;
   justify-content: center;
