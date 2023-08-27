@@ -788,7 +788,7 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"], avatar=message["avatar"]):
         st.markdown(message["content"])
 
-interaction_limit = 1
+interaction_limit = 10
 
 if len(st.session_state.messages) < 2 * interaction_limit:
     if prompt := st.chat_input(""):
