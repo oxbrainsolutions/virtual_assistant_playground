@@ -759,27 +759,26 @@ st.markdown(header.format(encoded_string, img_to_bytes("images/oxbrain_logo_tran
 
 spinner = st.empty()
 
-col1, col2, col3 = st.columns([1, 4, 1])
-with col2:
-  header_text = '''
-    <p class="header_text" style="margin-top: 3.6em; margin-bottom: 0em; text-align: center;"><span style="color: #FAFAFA; font-family: sans-serif; font-size: 1.8em; ">Virtual Conversational Assistant</span></p>
-  '''
 
-  header_media_query = '''
-      <style>
-      @media (max-width: 1024px) {
-          p.header_text {
-            font-size: 3.2em;
-          }
+header_text = '''
+<p class="header_text" style="margin-top: 3.6em; margin-bottom: 0em; text-align: center;"><span style="color: #FAFAFA; font-family: sans-serif; font-size: 1.8em; ">Virtual Conversational Assistant</span></p>
+'''
+
+header_media_query = '''
+  <style>
+  @media (max-width: 1024px) {
+      p.header_text {
+        font-size: 3.2em;
       }
-      </style>
-  '''
-  st.markdown(header_media_query + header_text, unsafe_allow_html=True)
-  information_text1 = '''
-    <p class="information_text" style="margin-top: 2em; margin-bottom: 2em; text-align: justify;"><span style="color: #FAFAFA; font-family: sans-serif; font-size: 1em; ">In this interactive playground, you can explore the capabilities of conversational AI technology using advanced natural language processing algorithms. To begin, simply ask the virtual assistant a question and the AI model will respond accordingly. Please note that this playground is designed to process a maximum of 10 interactions.</span></p>
-  '''
-  subheader_text_field2 = st.empty()
-  subheader_text_field2.markdown(information_media_query + information_text1, unsafe_allow_html=True)
+  }
+  </style>
+'''
+st.markdown(header_media_query + header_text, unsafe_allow_html=True)
+information_text1 = '''
+<p class="information_text" style="margin-top: 2em; margin-bottom: 2em; text-align: justify;"><span style="color: #FAFAFA; font-family: sans-serif; font-size: 1em; ">In this interactive playground, you can explore the capabilities of conversational AI technology using advanced natural language processing algorithms. To begin, simply ask the virtual assistant a question and the AI model will respond accordingly. Please note that this playground is designed to process a maximum of 10 interactions.</span></p>
+'''
+subheader_text_field2 = st.empty()
+subheader_text_field2.markdown(information_media_query + information_text1, unsafe_allow_html=True)
 
 if "openai_model" not in st.session_state:
     st.session_state["openai_model"] = "gpt-3.5-turbo"
@@ -791,7 +790,7 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"], avatar=message["avatar"]):
         st.markdown(message["content"])
 
-interaction_limit = 10
+interaction_limit = 1
 
 if len(st.session_state.messages) < 2 * interaction_limit:
     if prompt := st.chat_input(""):
@@ -815,9 +814,7 @@ if len(st.session_state.messages) < 2 * interaction_limit:
             message_placeholder.markdown(full_response)
         st.session_state.messages.append({"role": "assistant", "content": full_response, "avatar": "images/oxbrain_assistant_icon.png"})
 else:
-    col1, col2, col3 = st.columns([1, 4, 1])
-    with col2:
-        st.warning(f"Warning: Maximum process limit reached. You may only run a maximum of {interaction_limit} interactions.")
+    st.warning(f"Warning: Maximum process limit reached. You may only run a maximum of {interaction_limit} interactions.")
 
 footer = """
 <style>
